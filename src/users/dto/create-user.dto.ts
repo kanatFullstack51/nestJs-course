@@ -13,6 +13,6 @@ export class CreateUserDto {
   readonly password: string;
   //
   @ApiProperty({ example: "numberphone", description: "phone number" }) // ApiProperty decorator we use for documenting stuff like that, pointing what exactly we would like to name
-  @IsNumber()
-  readonly phoneNumber: number;
+  @IsString()
+  readonly phoneNumber: string;
 }

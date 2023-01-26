@@ -1,19 +1,18 @@
-// import { Module } from '@nestjs/common';
-// import { PostsService } from './posts.service';
-// import { PostsController } from './posts.controller';
-// import { SequelizeModule } from '@nestjs/sequelize';
-// import { Role } from 'src/roles/roles.model';
-// import { UserRoles } from 'src/roles/user-roles.model';
-// import { OnePost } from './posts.model';
-// import { User } from 'src/users/users.model';
-// import { FilesModule } from 'src/files/files.module';
+import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { Sequelize } from 'sequelize';
+import { FilesModule } from 'src/files/files.module';
+import { User } from 'src/users/users.model';
+import { PostsController } from './posts.controller';
+import { EachPost } from './posts.model';
+import { PostsService } from './posts.service';
 
-// @Module({
-//   providers: [PostsService],
-//   controllers: [PostsController],
-//   imports:[
-//     SequelizeModule.forFeature([User, OnePost]),
-//     FilesModule
-//   ]
-// })
-// export class PostsModule {}
+@Module({
+    providers: [PostsService],
+    controllers:[PostsController],
+    imports:[
+        SequelizeModule.forFeature([User, EachPost]),
+        FilesModule
+    ]
+})
+export class PostsModule {}

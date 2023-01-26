@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {BelongsToMany, Column, DataType, HasMany, Model, Table} from 'sequelize-typescript';
+import { EachPost } from 'src/posts/posts.model';
 import { Role } from 'src/roles/roles.model';
 import { UserRoles } from 'src/roles/user-roles.model';
 interface UserCreationAttrs {
@@ -25,8 +26,8 @@ export class User extends Model <User,UserCreationAttrs> {
     password:string;
 
     @ApiProperty({example: '996700606060', description:'number'}) // ApiProperty decorator we use for documenting stuff like that, pointing what exactly we would like to name
-    @Column({ type: DataType.NUMBER }) 
-    phoneNumber: number;
+    @Column({ type: DataType.STRING }) 
+    phoneNumber: string;
 
 
     @ApiProperty({example:'true', description:'banned or not'}) // ApiProperty decorator we use for documenting stuff like that, pointing what exactly we would like to name
@@ -45,6 +46,6 @@ export class User extends Model <User,UserCreationAttrs> {
     roles: Role[];
 
 
-    // @HasMany(()=> OnePost)
-    // posts: OnePost[];
+    @HasMany(()=> EachPost)
+    posts: EachPost[];
 }

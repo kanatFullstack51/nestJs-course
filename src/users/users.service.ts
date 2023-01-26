@@ -7,7 +7,7 @@ import { CreateUserDto } from "./dto/create-user.dto";
 import { RoleEnum } from "./enums/role.enum";
 import { User } from "./users.model";
 
-// SERVICES MUST USE @INJECTABBLE TO BE INJECTED IN CONTROLLERS, 
+// SERVICES MUST USE @INJECTABLE TO BE INJECTED IN CONTROLLERS, 
 // ALSO THEY SERVE AS A BASIS FOR FUNCTIONS WHICH WE USE BY REFERING TO SERVICE IN CONTROLLERS.
 @Injectable()
 export class UsersService {
