@@ -25,8 +25,8 @@ export class User extends Model <User,UserCreationAttrs> {
     password:string;
 
     @ApiProperty({example: '996700606060', description:'number'}) // ApiProperty decorator we use for documenting stuff like that, pointing what exactly we would like to name
-    @Column({ type: DataType.NUMBER }) 
-    phoneNumber: number;
+    @Column({ type: DataType.STRING }) 
+    phoneNumber: string;
 
 
     @ApiProperty({example:'true', description:'banned or not'}) // ApiProperty decorator we use for documenting stuff like that, pointing what exactly we would like to name
@@ -38,13 +38,7 @@ export class User extends Model <User,UserCreationAttrs> {
     @Column({type:DataType.STRING, allowNull:true})
     banReason:string;
 
-
-
-    
     @BelongsToMany(()=> Role, ()=> UserRoles)
     roles: Role[];
 
-
-    // @HasMany(()=> OnePost)
-    // posts: OnePost[];
 }
