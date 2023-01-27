@@ -13,11 +13,11 @@ import { UsersController } from "./users/users.controller";
 import { AuthModule } from "./auth/auth.module";
 // import { PostsModule } from './posts/posts.module';
 // import {OnePost} from 'src/posts/posts.model';
-import { FilesModule } from "./files/files.module";
-import { PostsService } from "./posts/posts.service";
-import { PostsController } from "./posts/posts.controller";
-import { PostsModule } from "./posts/posts.module";
-import { EachPost } from "./posts/posts.model";
+// import { FilesModule } from "./files/files.module";
+// import { PostsService } from "./posts/posts.service";
+// import { PostsController } from "./posts/posts.controller";
+// import { PostsModule } from "./posts/posts.module";
+// import { EachPost } from "./posts/posts.model";
 import { AuthService } from "./auth/auth.service";
 import { AuthController } from "./auth/auth.controller";
 
@@ -35,16 +35,14 @@ import { AuthController } from "./auth/auth.controller";
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles, EachPost],
+      models: [User, Role, UserRoles ],
       autoLoadModels: true,
     }),
     UsersModule,
     RolesModule,
     AuthModule,
-    FilesModule,
-    PostsModule,
   ],
-  providers: [PostsService],
-  controllers: [PostsController],
+  // providers: [PostsService],
+  // controllers: [PostsController],
 })
 export class AppModule {}
