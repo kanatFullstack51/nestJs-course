@@ -13,7 +13,6 @@ import { UsersController } from './users/users.controller';
 import { AuthModule } from './auth/auth.module';
 // import { PostsModule } from './posts/posts.module';
 // import {OnePost} from 'src/posts/posts.model';
-import { FilesModule } from './files/files.module';
 
 @Module({
   // controllers: [RolesController, UsersController],
@@ -28,9 +27,8 @@ import { FilesModule } from './files/files.module';
       port: Number(process.env.POSTGRES_PORT),
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
-      database:process.env.POSTGRES_DB,
+      database:'project-database',
       models: [User, Role, UserRoles
-        //  OnePost
         ]
          ,
       autoLoadModels: true 
@@ -38,8 +36,6 @@ import { FilesModule } from './files/files.module';
     UsersModule,
     RolesModule,
     AuthModule,
-    // PostsModule,
-    FilesModule,
   ],
 })
 export class AppModule {}
