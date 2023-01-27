@@ -28,10 +28,7 @@ import { AuthModule } from './auth/auth.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database:process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles
-        //  OnePost
-        ]
-         ,
+      models: [User, Role, UserRoles],
       autoLoadModels: true 
     }),
     UsersModule,
